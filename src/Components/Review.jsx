@@ -2,7 +2,15 @@ import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
 function Review(props) {
   // Destructure the prop object
-  const { name, job, img, text, increaseIndex, decreaseIndex } = props;
+  const {
+    name,
+    job,
+    img,
+    text,
+    increaseIndex,
+    decreaseIndex,
+    getRandomReview,
+  } = props;
   return (
     <article className="review">
       <div className="img-container">
@@ -22,7 +30,11 @@ function Review(props) {
           <FaChevronRight />
         </button>
       </div>
-      <button type="button" className="btn btn-hipster">
+      <button
+        type="button"
+        className="btn btn-hipster"
+        onClick={() => getRandomReview()}
+      >
         Surprise Me
       </button>
     </article>

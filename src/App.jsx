@@ -42,6 +42,15 @@ const App = () => {
       });
     }
   }
+
+  // Function to generate a random review:
+  function getRandomReview() {
+    setIndex((currentState) => {
+      const maxIndex = data.length - 1;
+      const newState = Math.floor(Math.random() * maxIndex);
+      return newState;
+    });
+  }
   // Destructure the data object
   const { name, job, image, text } = data[index];
   return (
@@ -53,6 +62,7 @@ const App = () => {
         text={text}
         increaseIndex={increaseIndex}
         decreaseIndex={decreaseIndex}
+        getRandomReview={getRandomReview}
       />
     </main>
   );
