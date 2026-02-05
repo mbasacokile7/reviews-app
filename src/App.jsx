@@ -42,14 +42,15 @@ const App = () => {
       });
     }
   }
-
+  // Destructure the data object
+  const { name, job, image, text } = data[index];
   return (
     <main>
       <Review
-        name={data[index].name}
-        job={data[index].job}
-        img={data[index].image}
-        text={data[index].text}
+        name={name}
+        job={job}
+        img={image}
+        text={text}
         increaseIndex={increaseIndex}
         decreaseIndex={decreaseIndex}
       />
